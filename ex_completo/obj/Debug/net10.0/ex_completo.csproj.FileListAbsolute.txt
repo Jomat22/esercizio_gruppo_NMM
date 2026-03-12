@@ -1,0 +1,15 @@
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\bin\Debug\net10.0\ex_completo.exe
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\bin\Debug\net10.0\ex_completo.deps.json
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\bin\Debug\net10.0\ex_completo.runtimeconfig.json
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\bin\Debug\net10.0\ex_completo.dll
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\bin\Debug\net10.0\ex_completo.pdb
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.AssemblyInfoInputs.cache
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.AssemblyInfo.cs
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.csproj.CoreCompileInputs.cache
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.sourcelink.json
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.dll
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\refint\ex_completo.dll
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.pdb
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ex_completo.genruntimeconfig.cache
+C:\Users\matte\OneDrive\Documenti\GitHub\esercizio_gruppo_NMM\ex_completo\obj\Debug\net10.0\ref\ex_completo.dll
