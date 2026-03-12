@@ -12,7 +12,7 @@ public class EmailService : IOrderObserver {
         Console.WriteLine($"[EMAIL CLIENTE]: {msg}");
 }
 
-// Il Manager che coordina tutto e notifica gli osservatori
+// Il Manager che coordina tutto e notifica gli osservatori (+ facade)
 public class OrderManager {
     private List<IOrderObserver> _observers = new List<IOrderObserver>();
     private IPricingStrategy _strategy = new StandardPricing();

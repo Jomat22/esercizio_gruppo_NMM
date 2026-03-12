@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("factoryedecorator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+571dcfb7af89494f12f74561437fe61f57842616")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+114f2f06ed394eaf2f803499ec0b8643e98dd1f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("factoryedecorator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("factoryedecorator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
