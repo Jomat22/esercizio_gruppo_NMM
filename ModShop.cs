@@ -113,7 +113,7 @@ namespace ModShop
             var config = AppContext.Instance;
             double prezzoFinale = prezzoScontato + (prezzoScontato * config.Iva / 100);
             string info = $"{p.GetDescrizione()} | Totale: {prezzoFinale:F2} {config.Valuta}";
-            Console.WriteLine($"\n--- RIEPILOGO: {info} ---\n");
+            Console.WriteLine($"\n--- Riepilogo: {info} ---\n");
             //salva nello storico (Extra)
             config.StoricoOrdini.Add(info);
             NotificaTutti($"Ordine finalizzato correttamente.");
@@ -142,11 +142,11 @@ namespace ModShop
                         GestisciNuovoOrdine(motore);
                         break;
                     case "2":
-                        Console.WriteLine("\n--- STORICO ORDINI ---");
+                        Console.WriteLine("\n--- Storico ordini ---");
                         AppContext.Instance.StoricoOrdini.ForEach(Console.WriteLine);
                         break;
                     case "3":
-                        Console.Write("Inserisci Valuta (es. USD): ");
+                        Console.Write("Inserisci Valuta (es. EU): ");
                         AppContext.Instance.Valuta = Console.ReadLine().ToUpper();
                         break;
                     case "0":
@@ -163,16 +163,16 @@ namespace ModShop
                 string code = Console.ReadLine()?.ToUpper();
                 IProduct carrello = ProductFactory.CreateProduct(code);
                 //Uso del Decorator
-                Console.Write("Aggiungere Stampa F/R (+5€)? (s/n): ");
+                Console.Write("Aggiungere Stampa F/R (+5€)? (si/no): ");
                 if (Console.ReadLine()?.ToLower() == "s") carrello = new StampaFR(carrello);
-                Console.Write("Aggiungere Incisione Laser (+4.5€)? (s/n): ");
+                Console.Write("Aggiungere Incisione Laser (+4.5€)? (si/no): ");
                 if (Console.ReadLine()?.ToLower() == "s") carrello = new Incisione(carrello);
                 //Uso della Strategy (Extra 2: Coupon)
-                Console.Write("Inserisci coupon (PROMO / WHOLESALE / INVIO per Standard): ");
+                Console.Write("Inserisci coupon (Promo / Whosale / Invio per Standard): ");
                 string coupon = Console.ReadLine()?.ToUpper();
                 motore.ImpostaStrategia(coupon switch {
-                    "PROMO" => new PromoPricing(),
-                    "WHOLESALE" => new WholesalePricing(),
+                    "Promo" => new PromoPricing(),
+                    "Wholesale" => new WholesalePricing(),
                     _ => new StandardPricing()
                 });
                 //Uso della Facade per chiudere l'ordine
