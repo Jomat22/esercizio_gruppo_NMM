@@ -1,22 +1,20 @@
 using System;
 using System.Collections.Generic;
-
 namespace ModShop
 {
-    // 1. Singleton per l'AppContext
-    // Garantisce che esista una sola istanza di questa classe in tutta l'app.
-    // Centralizza configurazioni globali (IVA, Valuta) e lo storico,
-    // evitando discrepanze di dati tra diverse parti del programma.
+    //Singleton per l'AppContext
+    //Garantisce che esista una sola istanza di questa classe in tutta l'app
+    //Centralizza configurazioni globali (IVA, Valuta) e lo storico,
+    //evitando discrepanze di dati tra diverse parti del programma.
     public class AppContext
     {
         private static AppContext _instance;
         public string Valuta { get; set; } = "EUR";
         public double Iva { get; set; } = 22.0;
-        //extra 1: Storico ordini centralizzato per consultazione globale.
+        //extra: Storico ordini centralizzato per consultazione globale.
         public List<string> StoricoOrdini { get; } = new List<string>();
         private AppContext() { } // Costruttore privato: impedisce 'new AppContext()' esterno
         public static AppContext Instance => _instance ??= new AppContext();
-
         public void Log(string messaggio)
         {
             Console.WriteLine($"[SISTEMA-LOG]: {DateTime.Now:HH:mm:ss} - {messaggio}");
@@ -34,7 +32,7 @@ namespace ModShop
     public class EmailMockService : IOrderObserver {
         public void Aggiorna(string msg) => Console.WriteLine($"[EMAIL-MOCK]: Invio email... {msg}");
     }
-    // Factory per ProductFactory
+    //Factory per ProductFactory
     //incapsula la logica di creazione degli oggetti.
     //permette di creare prodotti complessi usando solo una stringa ("TSHIRT"),
     // separando il codice che "usa" il prodotto dal codice che lo "crea".
@@ -85,7 +83,7 @@ namespace ModShop
     public class PromoPricing : IPricingStrategy { public double Calcola(double p) => p * 0.85; } // -15%
     public class WholesalePricing : IPricingStrategy { public double Calcola(double p) => p * 0.70; } // -30%
 
-    // Facadeche è considerato come il motore degli ordini
+    // Facade che è considerato come il motore degli ordini
     //fornisce un'interfaccia semplice a un sistema complesso.
     //nasconde al Main il coordinamento tra Factory, Decorator, Strategy e Observer
     //il Main chiama 'EseguiCheckout' e la Facade fa tutto il resto.
@@ -93,7 +91,6 @@ namespace ModShop
     {
         private List<IOrderObserver> _observers = new();
         private IPricingStrategy _strategy = new StandardPricing();
-
         public ModShopEngine() {
             _observers.Add(new UIService());
             _observers.Add(new EmailMockService());
@@ -131,7 +128,7 @@ namespace ModShop
             {
                 Console.WriteLine("\n==== Menu ModShop ====");
                 Console.WriteLine("1. Crea Ordine (TSHIRT / MUG / SKIN)");
-                Console.WriteLine("2. Visualizza Storico (Extra 1)");
+                Console.WriteLine("2. Visualizza Storico"); //extra 
                 Console.WriteLine("3. Impostazioni Globali (Singleton)");
                 Console.WriteLine("0. Esci");
                 Console.Write("Selezione: ");
@@ -167,7 +164,7 @@ namespace ModShop
                 if (Console.ReadLine()?.ToLower() == "s") carrello = new StampaFR(carrello);
                 Console.Write("Aggiungere Incisione Laser (+4.5€)? (si/no): ");
                 if (Console.ReadLine()?.ToLower() == "s") carrello = new Incisione(carrello);
-                //Uso della Strategy (Extra 2: Coupon)
+                //Uso della Strategy (Extra : Coupon)
                 Console.Write("Inserisci coupon (Promo / Whosale / Invio per Standard): ");
                 string coupon = Console.ReadLine()?.ToUpper();
                 motore.ImpostaStrategia(coupon switch {
